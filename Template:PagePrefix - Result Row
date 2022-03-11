@@ -1,0 +1,17 @@
+<noinclude>
+{| class=
+</noinclude>
+|- class="{{#ifexpr:( ( {{#time:U|{{{4|1990-01-01}}} }} ) > ( {{#time:U|now -1 day}} ) ) | zRowColor4Today | }}"
+| style="white-space:nowrap;vertical-align:middle;padding:1px 3px 1px 24px;text-align:center;width:24px;" | [[:{{{1|error}}}|<span style="color:#888;font-size:1.2em;">{{#switch:{{uc:{{{10|error}}}}}
+|PNG=&#128444;
+|JPG=&#128444;
+|&#128196;
+}}</span>]]
+| style="white-space:nowrap;vertical-align:middle;padding:1px 12px 1px  3px;" | [[{{#replace:{{{1|error}}}|File:|Media:}}|{{#replace:{{{1|error}}}|File:{{#var:PagePrefix}}|}}]] 
+| style="white-space:nowrap;vertical-align:middle;padding:1px 12px 1px  3px;" | {{uc:{{{10|error}}}}}
+| style="white-space:nowrap;vertical-align:middle;padding:1px 12px 1px  3px;" | {{{2|tbd}}}
+| style="white-space:nowrap;vertical-align:middle;padding:1px 12px 1px  3px;" | {{{9|tbd}}}
+| style="white-space:nowrap;vertical-align:middle;padding:1px 12px 1px  3px;" | {{#time:Y-m-d|{{{4|1990-01-01}}}}} - {{#time:h:i a|{{{4|1990-01-01}}}}}
+|{{#css: .zRowColor4Today td { background-color: #ffffc0!important; } }}<noinclude>
+|}
+</noinclude><noinclude>[[Category:KMS Core]][[Category:Tool - File Folder]]</noinclude>

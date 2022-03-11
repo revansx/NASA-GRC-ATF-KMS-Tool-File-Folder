@@ -1,0 +1,6 @@
+{{#css:
+div#HasAttachments { display:inline-block; visibility:visible; }
+}}<noinclude>
+[[Category:KMS Core]]
+[[Category:Tool - File Folder]]
+</noinclude>

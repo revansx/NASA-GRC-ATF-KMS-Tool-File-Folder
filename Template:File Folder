@@ -1,0 +1,304 @@
+<noinclude>
+* This is the "File Folder" template.
+</noinclude><includeonly><div class=HideMe> 
+
+__NOTOC__
+__NONSHEADER__
+
+{| class="wikitable"
+! colspan="2" |Infobox
+|-
+! Uses FileFolderPagePrefix
+| [[Uses FileFolderPagePrefix::{{#vardefineecho:PagePrefix|{{{Uses FileFolderPagePrefix|{{MediaWiki:ZSitePrefix}}{{PAGEID}}-}}}}}]]
+|-
+! Page creator
+| {{#ask:[[{{FULLPAGENAME}}]]|mainlabel=-|?Page creator=}}
+|-
+! Has Parent Page
+| [[Has Parent Page::{{#if:{{NAMESPACE}}|{{NAMESPACE}}:|}}{{BASEPAGENAME}}]]
+|-
+! Has Page Name
+| [[Has SubPage Name::{{SUBPAGENAME}}]]
+|-
+! Is Protected
+| [[Is Protected::{{{Is Protected|}}}]] 
+|-
+! File Folder Has AFS Code
+| [[File Folder Has AFS Code::{{{File Folder Has AFS Code|tbd}}}]]
+|-
+! Has Num Of Subpages
+| [[Has Num Of Subpages::{{#ask:[[Category:File Folder]][[Has Parent Page::{{FULLPAGENAME}}]]|format=count}}]]
+|-
+! Has File Folder Size {{#vardefine:HasFileFolderSize|{{#ask:[[Category:Uploads]][[~*{{#var:PagePrefix}}*]]|?Has file size#-|format=sum}}}}
+| [[Has File Folder Size::{{#ifeq:{{#expr:({{#if:{{#var:HasFileFolderSize}}|{{#var:HasFileFolderSize}}|0}})}}|0|0|{{#expr:({{#if:{{#var:HasFileFolderSize}}|{{#var:HasFileFolderSize}}|0}})}}}} KB]]
+|-
+! Has Num Of Files {{#vardefine:HasNumOfFiles|{{#ask:[[Category:Uploads]][[~*{{#var:PagePrefix}}*]]|format=count}}}}
+| [[Has Num Of Files::{{#if:{{#var:HasNumOfFiles}}|{{#var:HasNumOfFiles}}|0}}]]
+|-
+! Has Total Number of Files Within {{#vardefine:HasTotalNumberofFilesWithin|{{#ask:[[Category:File Folder]][[Has Parent Page::~{{FULLPAGENAME}}*]]|?Has Num Of Files#-|format=sum}}}}
+| [[Has Total Number of Files Within::{{#if:{{#var:HasTotalNumberofFilesWithin}}|{{#var:HasTotalNumberofFilesWithin}}|0}}]]
+|-
+! Has Total Number of Files {{#vardefine:HasTotalNumberofFiles|{{#expr:({{#if:{{#var:HasNumOfFiles}}|{{#var:HasNumOfFiles}}|0}}+{{#if:{{#var:HasTotalNumberofFilesWithin}}|{{#var:HasTotalNumberofFilesWithin}}|0}})}}}}
+| [[Has Total Number of Files::{{#if:{{#var:HasTotalNumberofFiles}}|{{#var:HasTotalNumberofFiles}}|0}}]]
+|-
+! Has Total Folder Size {{#vardefine:HasTotalFolderSize|{{#expr:({{#ask:[[Category:File Folder]][[Has Parent Page::~{{FULLPAGENAME}}*]]|?Has File Folder Size#-|format=sum}}+{{#if:{{#var:HasFileFolderSize}}|{{#var:HasFileFolderSize}}|0}})}}}}
+| [[Has Total Folder Size::{{#if: {{#var:HasTotalFolderSize}}|{{#var:HasTotalFolderSize}}|0}} KB]]
+|-
+! Has Overflow From
+| [[Has Overflow From::{{#replace:{{{Overflow from|}}}| |_}}]]
+|-
+! Semantic Dependencies
+| [[Semantic Dependency::{{FULLPAGENAME}}]][[Semantic Dependency::{{#ask:[[{{FULLPAGENAME}}]]|mainlabel=-|?Has Parent Page=|link=none}}]]
+|-
+! File Folder Has Purpose
+| [[File Folder Has Purpose::{{{File Folder Has Purpose|}}}]]
+|-
+! File Folder Has POC
+| [[File Folder Has POC::{{{File Folder Has POC|}}}]]
+|-
+! File Folder Has NRRS Code
+| [[File Folder Has NRRS Code::{{{File Folder Has NRRS Code|}}}]]
+|-
+! File Folder Has NRRS Name
+| [[File Folder Has NRRS Name::{{{File Folder Has NRRS Name|}}}]]
+|-
+! File Folder Has NRRS Description
+| [[File Folder Has NRRS Description::{{{File Folder Has NRRS Description|}}}]]
+|-
+! File Folder Has NRRS Retention
+| [[File Folder Has NRRS Retention::{{{File Folder Has NRRS Retention|}}}]]
+|-
+! File Folder Has NRRS Public Notes
+| [[File Folder Has NRRS Public Notes::{{{File Folder Has NRRS Public Notes|}}}]]
+|-
+! File Folder Has NRRS Content Types
+| [[File Folder Has NRRS Content Types::{{{File Folder Has NRRS Content Types|}}}]]
+|-
+! File Folder Has NRRS Duration
+| [[File Folder Has NRRS Duration::{{{File Folder Has NRRS Duration|}}}]]
+|}</div><div class=zMenuTop style="padding:0px 8px 0px 12px; margin:0px;">
+{| cellpadding=0 cellspacing=0 class=zWide
+|- 
+| style="vertical-align:middle;color:#fff;width:32px;font-size:3em;" |&#128449;
+| style="vertical-align:middle;color:#fff;padding-left:12px;" | '''<big>{{SUBPAGENAME}}</big>''' 
+|<div style="float:right; font-size:1.8em; color:#fff;margin-top:12px;">{{#widget:RefreshPage}}</div>
+|}</div>
+{{#if:{{{Overflow from|}}}
+| Overflow from: [[{{{Overflow from|}}}]]
+|
+}}
+= Files and Subfolders &#128194; =
+<div style="float:right;">
+{|
+| {{#formlink:form=File Folder|target={{FULLPAGENAME}}|link type=button|link text=<span style="font-size:3em;">&#128736;</span>{{#info: click this button to edit the file folder properties |note}}<br/>edit folder|returnto={{FULLPAGENAME}}|reload}}
+|{{#formlink:form=File Folder
+|link type=button
+|link text=<span style="font-size:3em;">&#x1F4C2;</span>{{#info: click this button to create a new folder |note}}<br/>create subfolder
+|query string=File Folder[Requested New Subpage Basepage]={{FULLPAGENAME}}
+|returnto={{FULLPAGENAME}}
+|reload
+}}
+|}</div>
+'''<big>Subfolders</big>''' ({{#ask:[[Category:File Folder]][[!Files]][[!File Folders]][[!{{FULLPAGENAME}}]][[Has Parent Page::{{FULLPAGENAME}}]]|?File Folder Total|format=sum}}) {{#ifeq:{{#ask:[[{{FULLPAGENAME}}]]|mainlabel=-|?Has Parent Page=|default={{FULLPAGENAME}}|link=none}}|{{FULLPAGENAME}}|| [[{{#ask:[[{{FULLPAGENAME}}]]|mainlabel=-|?Has Parent Page=|default={{FULLPAGENAME}}|link=none}}|<span style="color:#ccc;">(up a level)</span>]]}}
+{{#ask:[[Category:File Folder]][[!Files]][[!File Folders]][[!{{FULLPAGENAME}}]][[Has Parent Page::{{FULLPAGENAME}}]]
+|format=template
+|template=File Folder - Parent Result (Row2)
+|introtemplate=File Folder - Parent Result (Top)
+|outrotemplate=File Folder - Parent Result (Bot)
+|link=none
+|default=<div style="padding-left:24px;">no subfolders {{#info: Use the &quot;'''Create subfolder'''&quot; button (&#128194;) in the top-right to create a new subfolder for this folder. |note}} </div>
+}}
+'''<big>Files</big>''' (''{{#ask:[[Category:Uploads]][[~*{{#var:PagePrefix}}*]]|format=count}} files'')
+{{#ask:[[Category:Uploads]][[~*{{#var:PagePrefix}}*]]
+|?Has file size
+|?Creation date
+|?Modification date
+|?Page author
+|?MIME Type
+|?Page creator
+|?Has Description
+|?Number of revisions
+|?Has file ext
+|format=template
+|template=PagePrefix - Result Row
+|introtemplate=PagePrefix - Result Top
+|outrotemplate=PagePrefix - Result Bot
+|userparam={{#var:PagePrefix}}
+|link=none
+|limit=200
+|default=<div style="padding-left:24px;">no files {{#info: Use the &quot;'''Upload to this Folder'''&quot; tab to upload files to this folder. |note}} </div>
+}}
+<div style="padding-top:12px;">
+----
+'''<big>Upload Tool</big>'''
+:Upload files to this folder page using the drop-box below
+{| 
+| style="font-size:5em;vertical-align:middle;color:#00ff00;" | &#128486;
+| style="padding-top:40px;" | {{#ifeq:{{{Disable Site Prefix|}}}|Yes
+  | {{#batchupload:Uploads|}}
+  | {{#batchupload:Uploads|+rename= !^({{#var:PagePrefix}}[./+]*)?!iu -->{{#var:PagePrefix}}}} 
+}}
+| style="font-size:5em;vertical-align:middle;color:#00ff00;" | &#128487;
+|}
+<div class=zBlurb>''Reminder: {{#ifeq:{{{Disable Site Prefix|}}}|Yes
+   | This is a Root File Folder and so any files uploaded here will not have the file prefix and you need to mindful of existing files that might have the same filename as what you are uploading.
+   | To avoid filename duplications, files uploaded here will be given the prefix "{{#var:PagePrefix}}"''
+   }}</div>
+</div>
+</div><!--
+
+Begin Folder Properties
+
+-->
+= Disk Use &#128202; =
+The purpose of this tab is to show the user how much total disk space on the server this folder occupies. As of {{#time:Y-m-d|now}} the results are text-only as this feature is still a work in process.
+<div style="float:right;">
+{|
+| {{#formlink:form=File Folder|target={{FULLPAGENAME}}|link type=button|link text=<span style="font-size:3em;">&#128736;</span>{{#info: click this button to edit the file folder properties |note}}<br/>edit folder|returnto={{FULLPAGENAME}}|reload}}
+|}</div>
+{{#ifeq:{{#expr:{{#ask:[[Category:File Folder]][[Has Parent Page::{{FULLPAGENAME}}]]|format=count}} < 2}}|1
+| 
+| {{#arraydefine:File Folder Pie Graph Index Array|{{#ask:[[Category:File Folder]][[Has Parent Page::{{FULLPAGENAME}}]][[Has SubPage Name::!{{#ask:[[{{FULLPAGENAME}}]]|mainlabel=-|?Has Parent Page=|link=none}}]]
+|format=template
+|template=File Folder Pie Graph Array Element
+|link=none
+|import-annotation=true
+|sort=Has Total Folder Size
+|order=desc
+}}}} {{#arraydefine:File Folder Pie Graph Legend Array|{{#ask:[[Category:File Folder]][[Has Parent Page::{{FULLPAGENAME}}]][[Has SubPage Name::!{{#ask:[[{{FULLPAGENAME}}]]|mainlabel=-|?Has Parent Page=|link=none}}]]
+|?Has Total Folder Size#-n=
+|format=template
+|template=File Folder Pie Graph Legend Array Element
+|link=none
+|import-annotation=true
+|sort=Has Total Folder Size
+|order=desc
+}}}}
+{{#replace:{{#arrayprint:File Folder Pie Graph Legend Array}}|,|<br/>}}
+<div class=HideMe>
+{{Graph:Chart
+|width=100
+|height=100
+|type=pie
+|legend=Size of Subfolders (KB)
+|x= {{#arrayprint:File Folder Pie Graph Legend Array}}
+|y1={{#ask:[[Category:File Folder]][[Has Parent Page::{{FULLPAGENAME}}]][[Has SubPage Name::!{{#ask:[[{{FULLPAGENAME}}]]|mainlabel=-|?Has Parent Page=|link=none}}]]|?Has Total Folder Size#-n=|link=none|mainlabel=-|sort=Has Total Folder Size
+|order=desc}}
+}}
+</div>
+}}<!--
+
+Begin Image Gallery
+
+-->
+<!--
+
+Begin Image Gallery
+
+-->
+{{#ifeq:0|{{#ask:[[Category:Uploads]][[Media type::BITMAP]][[~*{{#var:PagePrefix}}*]]|format=count}}
+|
+| 
+= Image Gallery &#128444; =
+<div style="float:right;">
+<table>
+<tr>
+<td>{{#formlink:form=File Folder|target={{FULLPAGENAME}}|link type=button|link text=<span style="font-size:3em;">&#128736;</span>{{#info: click this button to edit the file folder properties |note}}<br/>edit folder|returnto={{FULLPAGENAME}}|reload}}
+</td>
+</tr>
+</table></div><div id=zImageWrappper1 class=zImageWrappper>
+Display {{#ask:[[Category:Uploads]][[Media type::BITMAP]][[~*{{#var:PagePrefix}}*]]|format=count}} images found in this folder
+{{#ask:[[Category:Uploads]][[Media type::BITMAP]][[~*{{#var:PagePrefix}}*]]|format=gallery}}
+[[Category:Folders with Images]]
+}}
+{{#ifeq:0|{{#ask:[[Category:File Folder]][[Has Overflow From::{{#replace:{{FULLPAGENAME}}| |_}}]]|format=count}}
+|
+|
+= Overflow =
+{{#ask:[[Category:File Folder]][[Has Overflow From::{{#replace:{{FULLPAGENAME}}| |_}}]]|format=ol}}
+}}</div>
+
+= Maintainer Notes &#128221; =
+<div style="float:right;">
+<table>
+<tr>
+<td>{{#formlink:form=File Folder|target={{FULLPAGENAME}}|link type=button|link text=<span style="font-size:3em;">&#128736;</span>{{#info: click this button to edit the file folder properties |note}}<br/>edit folder|returnto={{FULLPAGENAME}}|reload}}
+</td>
+</tr>
+</table></div>
+{| cellspacing=12
+ | '''Folder Purpose:''' || {{{File Folder Has Purpose|This File Folder has no stated purpose}}}
+ |-
+ | '''Folder Maintainer:''' || {{{File Folder Has POC|This File Folder has no maintainer assigned}}}
+ |-
+ | '''Maintainer Notes:''' || {{#if:{{{Has Notes|}}}|(''see below'')|This File Folder has no Maintainer notes}}
+|}
+{{#if:{{{Has Notes|}}}|<hr/>|}}
+
+{{{Has Notes|}}}
+
+=Filing and Retention &#127760;=
+<div style="float:right;">
+<table>
+<tr>
+<td>{{#formlink:form=File Folder|target={{FULLPAGENAME}}|link type=button|link text=<span style="font-size:3em;">&#128736;</span>{{#info: click this button to edit the file folder properties |note}}<br/>edit folder|returnto={{FULLPAGENAME}}|reload}}
+</td>
+</tr>
+</table></div>
+<big>'''Filing Code'''</big> {{#info: '''Note 1''' - This setting is configured by editing the folder.<br/>'''Note 2''' - This setting is required for any file folder that is designated as records location in the organization's [[official record retention schedule]]. Please see the {{:{{Mediawiki:zSitePrefix}} Document Administrator}} for more information about how to use the AFS and NRRS configurations for this file folder. |note}}
+<div style="margin-left: 32px;">
+{{#if:{{{File Folder Has AFS Code|}}}
+  | This folder's Agency Filing Scheme (AFS) Configuration is:
+  | This folder has no Agency Filing Scheme (AFS) Configuration.
+}}
+{| class={{#if:{{{File Folder Has AFS Code|}}}||HideMe}}
+| class=zBlurb style="padding:6px;border-radius:12px  0px  0px 12px;" | '''[[{{{File Folder Has AFS Code|tbd}}}|{{#ask:[[{{{File Folder Has AFS Code|error}}}]]|mainlabel=-|?AFS Series Code=|link=none}}]]'''
+| class=zBlurb style="padding:6px;border-radius: 0px  0px  0px  0px;" | {{#ask:[[{{{File Folder Has AFS Code|error}}}]]|mainlabel=-|?AFS Series Main Group=|link=none}} 
+| class=zBlurb style="padding:6px;border-radius: 0px  0px  0px  0px;" | {{#ask:[[{{{File Folder Has AFS Code|error}}}]]|mainlabel=-|?AFS Series Subgroup=|link=none}} 
+| class=zBlurb style="padding:6px;border-radius: 0px 12px 12px  0px;" | {{#ask:[[{{{File Folder Has AFS Code|error}}}]]|mainlabel=-|?AFS Series Description=|link=none}}
+|}
+</div>
+<big>'''File Retention'''</big> {{#info: '''Note 1''' - This setting is configured by editing the folder.<br/>'''Note 2''' - This setting is required for any file folder that is designated as records location in the organization's [[official record retention schedule]]. Please see the {{:{{Mediawiki:zSitePrefix}} Document Administrator}} for more information about how to use the AFS and NRRS configurations for this file folder. |note}}
+<div style="margin-left: 32px;">
+{{#if:{{{File Folder Has NRRS Code|}}}
+  | This folder's NASA Record Retention Schedule (NRRS) configuration has been set as:
+  | This folder has no NASA Record Retention Schedule (NRRS) configuration.
+}}
+</div>
+= User Comments =
+<div id=zStreamWrappper1 class=zStreamWrappper>
+<comment-streams/></div>
+= Help =
+{{:Help:File Folder}}
+
+{{#css:
+.zTblFileFolderPageHelp { border:1px solid var(--zSiteColorBg1); margin-bottom:12px; }
+.zTblFileFolderPageHelp th { padding:6px 6px 6px 6px; border-bottom:1px solid #000; background-color:var(--zSiteColorBg1); color:#fff; }
+.zTblFileFolderPageHelp td { padding:6px 6px 6px 6px; }
+.zTblFileFolderPageHelp tr:nth-child(odd)  { background-color:#f8f8f8; }
+.zTblFileFolderPageHelp tr:nth-child(even) { background-color:#e8e8e8; }
+.zTblFileFolderPageHelp tr:hover td { background-color:#ffffc0; }
+}}
+<headertabs/>
+<div class=zBlurb style="border-radius:0px 0px 12px 12px;">{{#if:{{{Has Full Description|}}}{{{File Folder Has Purpose|}}}|'''<small>Footer</small>'''{{#if:{{{File Folder Has Purpose|}}}|<br/>Reminder - The purpose of this folder has been declared as: ''{{{File Folder Has Purpose|}}}''|}}{{#if:{{{File Folder Has Purpose|}}}| {{#if:{{{Has Full Description|}}}|<hr/>|<br/>}}|<br/>}}{{{Has Full Description|}}}|<span style="color:#aaa;">No footer text or purpose declared</span>}}</div>
+{{#css:
+.externalimage-holder { position: relative; }
+.externalimage-holder img { width: 100%; height: auto; }
+.mw-gallery-traditional { height:inherit!important; }
+.gallerybox  { height:inherit!important; }
+.thumb:before { height:inherit!important; }
+
+.zMenuTop { background-color:var(--zSiteColorBg1); border:2px solid #fff; border-radius:10px 10px 0px 0px; padding:3px 12px 3px 12px; color:#fff; }
+
+textarea#wfUploadDescription { display: none; visibility: hidden; }
+label[for="wfUploadDescription"] { display: none; visibility: hidden; } 
+
+}}
+<div class=HideMe>
+[[File Folder Total::{{#expr:( {{#replace:{{#ask:[[Category:File Folder]][[!Files]][[!File Folders]][[!{{FULLPAGENAME}}]][[Has Parent Page::{{FULLPAGENAME}}]]|?File Folder Total|format=sum}}|,|}} + {{#replace:{{#ask:[[Category:Uploads]][[~*{{#var:PagePrefix}}*]]|format=count}}|,|}} )}}]]
+</div>
+[[Category:File Folder]]
+</includeonly><noinclude>
+{{zToolCheck|Tool - File Folder}}
+[[Category:Uses SimpleBatchUpload]]
+</noinclude>

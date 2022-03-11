@@ -1,0 +1,72 @@
+<noinclude>
+* This is the "Uploads" Template. 
+</noinclude><includeonly><div><div style="display:none;visibility:hidden;">
+{| class=wikitable
+! class=wikitable style="" colspan="2" | Infobox
+|-
+! colspan=2 style="text-align:center;" | Page Properties
+{{Infobox page property row|Has PAGEID                   |{{PAGEID}}                          |}}
+{{Infobox page property row|Has NAMESPACE                |{{NAMESPACE}}                       |}}
+{{Infobox page property row|Has ROOTPAGENAME             |{{ROOTPAGENAME}}                    |}}
+{{Infobox page property row|Has SUBPAGENAME              |{{SUBPAGENAME}}                     |}}
+{{Infobox page property row|Has BASEPAGENAME             |{{BASEPAGENAME}}                    |}}
+{{Infobox page property row|Has PAGENAME                 |{{PAGENAME}}                        |}}
+|-
+! colspan=2 style="text-align:center;" | Revision Properties
+{{Infobox page property row|Has REVISIONTIMESTAMP        |{{REVISIONTIMESTAMP}}               |}}
+{{Infobox page property row|Has REVISIONYEAR             |{{REVISIONYEAR}}                    |}}
+{{Infobox page property row|Has REVISIONMONTH            |{{REVISIONMONTH}}                   |}}
+{{Infobox page property row|Has REVISIONUSER             |{{REVISIONUSER}}                    |}}
+{{Infobox page property row|Has REVISIONSIZE             |{{REVISIONSIZE}}                    |}}
+{{Infobox page property row|Has REVISIONID               |{{REVISIONID}}                      |}}
+|-
+! colspan=2 style="text-align:center;" | Media Properties
+{{Infobox page property row|Has file size               |{{#mediasize:{{FULLPAGENAME}}}}     |}}
+{{Infobox page property row|Has file type               |{{#mediamime:{{FULLPAGENAME}}}}     |}}
+|-
+| Has file ext: {{#vardefine:zfilename|{{PAGENAME}}}}
+| [[Has file ext::{{#sub:{{#var:zfilename}}|{{#expr:({{#rpos:{{#var:zfilename}}|.}}+1)}}|}}]]
+|-
+! Semantic dependencies
+| [[Semantic Dependency::{{FULLPAGENAME}}]][[Semantic Dependency::{{#ask:[[{{FULLPAGENAME}}]]|mainlabel=-|?Relates to Upload Page=|link=none}}]]
+|}
+</div>'''File Download''' - Use the link in yellow to download a local copy of this file.
+
+<span style="background-color:#ffff00;border:2px solid #0000ff;padding:12px;display:inline-block;">'''[[:{{#replace:{{FULLPAGENAME}}|File:|Media:}}|{{#replace:{{FULLPAGENAME}}|File:|}}]]'''</span>
+
+'''Relates to'''
+* Upload page: {{#iferror:{{#expr:({{#replace:{{#explode:{{FULLPAGENAME}}|-|0}}|File:{{MediaWiki:ZSitePrefix}}|}} + 1 )}}
+| ''none''
+| {{#ifeq:{{#expr:({{#replace:{{#explode:{{FULLPAGENAME}}|-|0}}|File:{{MediaWiki:ZSitePrefix}}|}} + 1 )}}|1
+| ''none''
+| {{#ask:[[Page ID::{{#replace:{{#explode:{{FULLPAGENAME}}|-|0}}|File:{{MediaWiki:ZSitePrefix}}|}}]]|limit=1|searchlabel=}} {{#set:|Relates to Upload Page={{#vardefineecho:zUploadPage|{{#ask:[[Page ID::{{#replace:{{#explode:{{FULLPAGENAME}}|-|0}}|File:{{MediaWiki:ZSitePrefix}}|}}]]|limit=1|link=none|searchlabel=|default=none }} }} }}
+}}
+}}
+<div class=HideMe>
+* [[XAR Wiki::{{#ask:[[{{#var:zUploadPage}}]]|mainlabel=-|link=none|?XAR Wiki=|default=na}}]]
+* [[XAR Cntr::{{#ask:[[{{#var:zUploadPage}}]]|mainlabel=-|link=none|?XAR Cntr=|default=na}}]]
+* [[XAR Camp::{{#ask:[[{{#var:zUploadPage}}]]|mainlabel=-|link=none|?XAR Camp=|default=na}}]]
+* [[XAR Bldg::{{#ask:[[{{#var:zUploadPage}}]]|mainlabel=-|link=none|?XAR Bldg=|default=na}}]]
+* [[XAR Room::{{#ask:[[{{#var:zUploadPage}}]]|mainlabel=-|link=none|?XAR Room=|default=na}}]]
+* [[XAR CabX::{{#ask:[[{{#var:zUploadPage}}]]|mainlabel=-|link=none|?XAR CabX=|default=na}}]]
+* [[XAR CabD::{{#ask:[[{{#var:zUploadPage}}]]|mainlabel=-|link=none|?XAR CabD=|default=na}}]]
+* [[XAR Fldr::{{#ask:[[{{#var:zUploadPage}}]]|mainlabel=-|link=none|?XAR Fldr=|default=na}}]]
+</div>
+
+{{#set:
+|Is a known duplicate={{{Is a known duplicate|none}}}
+|Is an accepted duplicate={{{Is an accepted duplicate|none}}}
+}}
+
+{{#css:
+.fullMedia    { display:none; visibility:hidden; }
+.mediaWarning { display:none; visibility:hidden; }
+.fullImageLink { display:none; visibility:hidden; }
+#filetoc { display:none; visibility:hidden; }
+}}
+</div>
+[[Category:Uploads]]
+</includeonly><noinclude>
+[[Category:KMS Core]]
+[[Category:Tool - File Folder]]
+</noinclude>

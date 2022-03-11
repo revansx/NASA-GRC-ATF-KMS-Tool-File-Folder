@@ -1,0 +1,23 @@
+<noinclude>
+{| class=zTbl
+! ...
+</noinclude>
+|- style=""
+| style="white-space:nowrap;padding:0px 6px 0px 6px;border-bottom:1px solid #f0f0f0;border-right:1px solid #ffffff;text-align:left;"   | {{#counter:SubpageCount}}
+| style="white-space:nowrap;padding:0px 6px 0px 6px;border-bottom:1px solid #f0f0f0;border-right:1px solid #ffffff;text-align:left;"   | <div style="float:left">/</div><div class="externalimage-holder" style="width:24px;float:left;">{{SERVER}}/WikiBlender/Icon-file-folder.png</div><div style="float:left">[[{{{1|error}}}|{{#ask:[[{{{1|error}}}]]|mainlabel=-|?Has SubPage Name=}}]]</div>
+| style="white-space:nowrap;padding:0px 0px 0px 6px;border-bottom:1px solid #f0f0f0;border-right:1px solid #ffffff;text-align:right;"  | {{#ask:[[{{{1}}}]]|mainlabel=-|?Has Total Number of Files=}}
+| style="white-space:nowrap;padding:0px 0px 0px 6px;border-bottom:1px solid #f0f0f0;border-right:1px solid #ffffff;text-align:right;"  | 
+| style="white-space:nowrap;padding:0px 0px 0px 6px;border-bottom:1px solid #f0f0f0;border-right:1px solid #ffffff;text-align:right;"  | {{#vardefine:ShowHasTotalFolderSize|{{#if:{{#ask:[[{{{1}}}]]|mainlabel=-|?Has Total Folder Size#-n=}}|{{#ask:[[{{{1}}}]]|mainlabel=-|?Has Total Folder Size#-n=}}|0}}}}
+| style="white-space:nowrap;padding:0px 0px 0px 6px;border-bottom:1px solid #f0f0f0;border-right:1px solid #ffffff;text-align:right;"  | {{#ifexpr: ( {{#var:ShowHasTotalFolderSize}} < 1024 )
+| {{#expr:{{#var:ShowHasTotalFolderSize}} round 2}} kB 
+|  {{#ifexpr: ( {{#var:ShowHasTotalFolderSize}} < 1048576 )
+   | {{#expr:({{#var:ShowHasTotalFolderSize}}/1024) round 2}} MB 
+   | {{#expr:({{#var:ShowHasTotalFolderSize}}/1048576) round 2}} GB
+   }}
+}}
+| style="white-space:nowrap;padding:0px 0px 0px 6px;border-bottom:1px solid #f0f0f0;border-right:1px solid #ffffff;text-align:center;" | 
+| style="white-space:nowrap;padding:0px 0px 0px 6px;border-bottom:1px solid #f0f0f0;border-right:1px solid #ffffff;text-align:right;"  | <noinclude>
+|}</noinclude><noinclude>
+[[Category:KMS Core]]
+[[Category:Tool - File Folder]]
+</noinclude>

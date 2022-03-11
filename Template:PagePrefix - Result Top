@@ -1,0 +1,16 @@
+{| class="zTblFileFolder sortable" style="border-spacing: 0px; margin: auto;"
+|- style=""
+! style="background-color:#f0f0f0;padding:4px 18px 4px 4px;border-top:1px solid #000;text-align:center;border-radius:0px 0px 0px 8px;" | 
+! style="background-color:#f0f0f0;padding:4px 18px 4px 4px;border-top:1px solid #000;" | Name
+! style="background-color:#f0f0f0;padding:4px 18px 4px 4px;border-top:1px solid #000;" | Type
+! style="background-color:#f0f0f0;padding:4px 18px 4px 4px;border-top:1px solid #000;" | Size
+! style="background-color:#f0f0f0;padding:4px 18px 4px 4px;border-top:1px solid #000;" | Revs
+! style="background-color:#f0f0f0;padding:4px 18px 4px 4px;border-top:1px solid #000;" | Date
+|-
+<noinclude>
+| ...
+|}
+</noinclude><noinclude>
+[[Category:KMS Core]]
+[[Category:Tool - File Folder]]
+</noinclude>

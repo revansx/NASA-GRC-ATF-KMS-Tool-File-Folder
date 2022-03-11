@@ -1,0 +1,12 @@
+<noinclude>
+{| class=wikitable
+</noinclude>
+|- 
+| {{{1|error}}}
+| {{#if:{{{2|}}}|[[{{{1|error}}}::{{{2|error}}}]]|}}<noinclude>
+|}
+</noinclude><noinclude>
+[[Category:KMS Core]]
+[[Category:Tool - Common]]
+[[Category:Tool - File Folder]]
+</noinclude>

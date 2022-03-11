@@ -1,0 +1,22 @@
+<noinclude>
+{| cellspacing=0 cellpadding=0
+</noinclude>
+|-
+| rowspan=3 style="white-space:nowrap;padding:8px;vertical-align:top;border:1px solid #e0e0e0;" | '''[[:{{{1|error}}}|{{#replace:{{{1}}}|File:{{Mediawiki:ZSitePrefix}}{{PAGEID:{{FULLPAGENAME}}}}-|}}]]'''<br/><small>- Uploaded on: {{{2}}}</small><br/><small>- By: {{{3}}}</small>
+| rowspan=3 style="padding:3px;margin-bottom:8px;vertical-align:top;border:1px solid #e0e0e0;" | {{#ifeq:{{{4|}}}|BITMAP|[[{{{1}}}|100px]]|{{SERVER}}/{{SCRIPTPATH}}/resources/assets/file-type-icons/fileicon.png}}
+| style="white-space:nowrap;border:1px solid #e0e0e0;padding:0px 18px 0px 4px;vertical-align:middle;" | <small>Link</small>
+| style="white-space:nowrap;border:1px solid #e0e0e0;padding:0px 18px 0px 4px;vertical-align:middle;" | <small><nowiki>[[</nowiki>:{{{1}}}|200px<nowiki>]]</nowiki></small>
+| rowspan=3 style="vertical-align:top;border:1px solid #e0e0e0;padding:0px 18px 0px 4px;vertical-align:middle;" | [{{canonicalurl:{{{1}}}|action=delete}} DELETE]
+|-
+| style="white-space:nowrap;border:1px solid #e0e0e0;padding:0px 18px 0px 4px;vertical-align:middle;" | <small>Image</small>
+| style="white-space:nowrap;border:1px solid #e0e0e0;padding:0px 18px 0px 4px;vertical-align:middle;" | <small><nowiki>[[</nowiki>{{{1}}}|200px<nowiki>]]</nowiki></small>
+|-
+| style="white-space:nowrap;border:1px solid #e0e0e0;padding:0px 18px 0px 4px;vertical-align:middle;" | <small>Media</small>
+| style="white-space:nowrap;border:1px solid #e0e0e0;padding:0px 18px 0px 4px;vertical-align:middle;" | <small><nowiki>[[</nowiki>Media:{{#replace:{{{1}}}|File:|}}<nowiki>]]</nowiki></small>
+|-
+| colspan=6 style="height:4px;" | <noinclude>
+|}
+</noinclude><noinclude>
+[[Category:KMS Core]]
+[[Category:Tool - File Folder]]
+</noinclude>

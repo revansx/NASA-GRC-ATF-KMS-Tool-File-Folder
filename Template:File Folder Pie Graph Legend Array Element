@@ -1,0 +1,4 @@
+{{#vardefine:File Folder Pie Graph Array Legend Count|{{#counter:File Folder Pie Graph Array Legend Count}}}}{{#ifeq:1|{{#var:File Folder Pie Graph Array Legend Count}}||,}}{{#var:File Folder Pie Graph Array Legend Count}} - {{{1|error}}} ({{{2|error}}})<noinclude>
+[[Category:KMS Core]]
+[[Category:Tool - File Folder]]
+</noinclude>

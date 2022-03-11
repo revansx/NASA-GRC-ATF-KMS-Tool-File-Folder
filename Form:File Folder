@@ -1,0 +1,92 @@
+<noinclude>
+* This is the "File Folder" form.
+</noinclude><includeonly>
+{{{for template|File Folder}}}{{{info|page name=<File Folder[Requested New Subpage Basepage]>/<File Folder[Requested New Subpage PageName]>}}}
+<div class=zBlurb>
+{|
+|- class=HideMe
+| <small>Base Page</small> {{#ifexist:{{FULLPAGENAME}}||{{#info: This is pre-populated and can not be changed. }} }}
+|
+| <small>New Sub-folder/Sub-page</small> {{#ifexist:{{FULLPAGENAME}}||{{#info: This is the only field you have to set. It the name of the new Sub-Page (aka Sub-Folder) you want made for the "Base Page" }} }}
+|-
+| {{#ifexist:{{FULLPAGENAME}}
+  |<big>'''{{BASEPAGENAME}}'''</big>
+  |<div class=HideMe>{{{field|Requested New Subpage Basepage|input type=text|mandatory}}}</div>
+  }}
+| <big>'''{{#ifexist:{{FULLPAGENAME}}||...}}/'''</big>
+| {{#ifexist:{{FULLPAGENAME}}
+  |<big>'''{{SUBPAGENAME}}'''</big>
+  | <span style="border:1px solid #ff0000;padding:6px 3px 6px 3px;">{{{field|Requested New Subpage PageName|input type=text|mandatory}}}</span><span style="color:#ff0000;">* &#8656; ''New folder name required''</span>
+  }}
+|}
+</div>
+=Maintainer Notes=
+{{H1|1. Folder User and Owner|optional}}
+<div style="padding-left:24px;">
+{|
+ |-
+ | <small>'''Folder Purpose'''</small> {{#info: If the page name of the folder does not sufficiently communicate the full purpose of the folder, then feel free to indicate that purpose better here |note}}
+ | {{{field|File Folder Has Purpose|input type=text|placeholder={{PAGENAME}}|size=38}}}
+ |-
+ | <small>'''Folder POC'''</small> {{#info: ... |note}}
+ | {{{field|File Folder Has POC|input type=dropdown|values from category=User|mapping property=UserFullName|placeholder={{#ask:[[{{FULLPAGENAME}}]]|mainlabel=-|?Page creator=|link=none}}|size=38}}}
+ |- 
+ | <small>'''Subfolder Option'''</small> {{#info: Only Folder creator can create new subfolders |note}}
+ | {{{field|Is Protected|input type=dropdown|values=Yes,No|mandatory|default=No}}} {{#info: This File Folder was created by [[{{#ask:[[{{FULLPAGENAME}}]]|mainlabel=-|?Page creator=|link=none}}]] |note}}
+|}
+</div>
+{{H1|2. Maintainer Notes|optional}}
+<div style="padding-left:24px;">
+{{{field|Has Notes|input type=textarea|editor=visualeditor||placeholder=Places notes, links and other information here that you want to be available in the "Notes" tab for the folder.}}}
+</div>
+{{H1|3. Folder Footer Text|optonal}}
+<div style="padding-left:24px;">
+{{{field|Has Full Description|input type=textarea|editor=visualeditor|placeholder=Places notes, links and other information here that you want to be seen at the bottom of every tab for the folder.}}}
+</div>
+=Folder Filing Code=
+{{H1|Agency Filing Scheme (AFS) Configuration| [[pbtracker:Agency_Filing_Scheme_(AFS)_Codes|AFS Codes on PBTracker]] }}
+<div class=zBlurb>{{{field|File Folder Has AFS Code|input type=dropdown|values from category=AFS Series|mapping property=AFS Series FQSN|}}}
+</div>
+=Folder Retention Settings=
+{{H1|NASA Records Retention Schedule (NRRS) Configuration| [https://nodis3.gsfc.nasa.gov/NPR_attachments/NRRS_1441.1.pdf NRRS 1441.1 June 2, 2021] }}
+<div style="padding-left:24px;">
+The NRRS fields in this section are optional unless this wiki "File Folder" page is listed in '''[[official record retention schedule|the organization's record retention schedule]]''' as an official record retention ''location''. 
+
+If this wiki "File Folder" page IS listed as an official record retention location, then the File Folder POC must use the fields below to configure the record retention settings to match the '''[[official record retention schedule]]'''. The settings selected will then set the retention schedule for all files uploaded to this folder and will be also be inherited by any sub-folders created within this folder (unless explicitly altered in the sub-folder).
+<div>
+{|  style="margin-left:64px;"
+ |+ style="border:1px solid #ccc;padding:3px; background-color:f0f0f0;" | '''NRRS Configuration settings for this folder'''
+ |-
+ | style="background-color:#f8f8f8;padding:3px;" | <small>'''Code'''</small> {{#info: This column includes the reference number given to the series of records descriptions in the third column. The format of the citation is formatted that the schedule number is included before the “/” and the item/sub-item follows. These numbers are a key identifier for records and are used when completing organizational records inventories or file plans, sending records to storage, or adding metadata to electronic records.  |note}}
+ | style="background-color:#f8f8f8;padding:3px;" | {{{field|File Folder Has NRRS Code|input type=text|placeholder=i.e. 01/002.0.B|size=38}}}
+ |-
+ | style="background-color:#f8f8f8;padding:3px;" | <small>'''Name'''</small>  {{#info: Name indicates the title heading of the records series in the description column |note}}
+ | style="background-color:#f8f8f8;padding:3px;" | {{{field|File Folder Has NRRS Name|input type=textarea|cols=40|rows=3|placeholder=i.e. EMERGENCY PREPAREDNESS POLICY FILES}}}
+ |-
+ | style="background-color:#f8f8f8;padding:3px;" | <small>'''Description'''</small>  {{#info: Description provides descriptions of each category and series of records. The Office of Primary Responsibility (OPR) is also indicated along with specific center instructions, if necessary. |note}}
+ | style="background-color:#f8f8f8;padding:3px;" | {{{field|File Folder Has NRRS Description|input type=textarea|cols=40|autogrow|placeholder=i.e. B. File copy of plan or directive if agency record copy is maintained in a master directives file and all related background materials. Record copy of each agency wide or center emergency directive, plan, and procedure issued by the responsible office, including related background papers and program development reports consisting of a copy of each plan or directive issued. }}}
+ |-
+ | style="background-color:#f8f8f8;padding:3px;" | <small>''' Retention'''</small>  {{#info: Retention indicates the required period of time the records are required to be maintained by NASA whether onsite or in inactive storage. NOTE: The statement, “RETIRE TO FRC,” can be interpreted as “MAY RETIRE TO FRC OR OTHER APPROVED INACTIVE STORAGE.” The Center Records Manager approves the storage arrangement. “<Authority>” provides the NARA Job Number that approved the disposition and retention for the Records Series described. Some records series map to a NARA General Records Schedule (GRS). In those cases, the GRS citation is included in this column. It should be noted that neither the NARA Job Number nor the GRS citation are included as part of the NRRS schedule/item citation. |note}}
+ | style="background-color:#f8f8f8;padding:3px;" | {{{field|File Folder Has NRRS Retention|input type=textarea|cols=40|rows=3|placeholder=i.e. DESTROY WHEN 3 YEARS OLD OR 3 YEARS AFTER SUPERSEDED OR OBSOLETE, WHICHEVER IS APPLICABLE. [GRS 5.3-010] }}}
+ |-
+ | style="background-color:#f8f8f8;padding:3px;" | <small>'''Public Notes'''</small>  {{#info: Public notes includes any explanatory notes to help further interpret the schedules or note any restrictions on applicability. |note}}
+ | style="background-color:#f8f8f8;padding:3px;" | {{{field|File Folder Has NRRS Public Notes|input type=textarea|cols=40|rows=3|placeholder=i.e. Document Administrator ({{:{{Mediawiki:zSitePrefix}} Document Administrator}}) }}}
+ |-
+ | style="background-color:#f8f8f8;padding:3px;" | <small>'''Content Types'''</small> {{#info: Content Types/Description continued is a field where different record series can be “tagged” with information about records most commonly associated with that retention schedule item in order to facilitate better natural language keyword searches. This can include form numbers, database names, or “commonly used” titles. Inclusion of content type keywords must be approved by Records Management staff for inclusion. This field also includes additional information from the “Description” column if the length of the description could not fit within the allowable character count of that field. |note}}
+ | style="background-color:#f8f8f8;padding:3px;" | {{{field|File Folder Has NRRS Content Types|input type=textarea|cols=40|rows=3|placeholder=i.e Document Administrator ({{:{{Mediawiki:zSitePrefix}} Document Administrator}}) for typical document types }}}
+ |-
+ | style="background-color:#f8f8f8;padding:3px;" | <small>'''Effective Duration (Years)'''</small>
+ | style="background-color:#f8f8f8;padding:3px;" | {{{field|File Folder Has NRRS Duration|input type=dropdown|values=1,2,3,4,5,6,7,8,9,10}}}
+|}
+</div>
+</div>
+{{{end template}}}
+<headertabs/>
+<div class=zBlurb>
+{|
+|{{{standard input|save}}} -OR- {{{standard input|cancel}}}
+|}
+</div>
+</includeonly><noinclude>
+{{zToolCheck|Tool - File Folder}}
+</noinclude>

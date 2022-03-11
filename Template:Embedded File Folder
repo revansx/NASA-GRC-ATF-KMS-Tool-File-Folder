@@ -1,0 +1,159 @@
+<noinclude>
+* This is the "File Folder" template.
+**<nowiki>{{{1|}}} is the subpage name if the root file folder is handled as a subpage </nowiki>
+** <nowiki>{{{2|}}} "Allow folders?" When "False", the subfolders + create a new folder are hidden</nowiki>
+</noinclude><includeonly>
+__NOTOC__
+{{#if:{{{1|}}}
+|<!-- handle as a subpage -->{{#vardefine:PagePrefix|{{MediaWiki:ZSitePrefix}}{{#replace:{{#ask:[[{{FULLPAGENAME}}/{{{1|}}}]]|?Page ID=|mainlabel=-|link=none}}|,|}}-}}
+<div style="border: 2px solid #888; border-radius: 8px 8px 8px 8px; padding: 3px 12px 3px 12px; width: 850px; margin: auto;">
+{{H1|{{#ifexist:{{FULLPAGENAME}}/{{{1|}}}|{{#ifeq:{{{2|}}}|False|<div class="HideMe">|}}[[{{FULLPAGENAME}}/{{{1|}}}|&#128194; Root Folder - {{{1|}}}]]|{{#autoedit:form=File Folder|target={{FULLPAGENAME}}/{{{1|}}}|link type=text|link text=<big><p style="color:red;">🆕 Create root file folder 🆕</p></big>|reload}}}}}}
+{{#ifexist:{{FULLPAGENAME}}/{{{1|}}}
+|<div style="float:right;">
+{{{!}}
+{{!}}{{#widget:RefreshPage}} {{#info:This link refreshes the page to ensure that everything is up to date.|note}}
+{{!}}-
+{{!}}{{#formlink:form=File Folder|link type=button|link text=<span style="font-size:3em;">&#x1F4C2;</span><br/>create subfolder|query string=File Folder[Requested New Subpage Basepage]={{FULLPAGENAME}}/{{{1|}}}|returnto={{FULLPAGENAME}}|reload}}
+{{!}}}</div>
+'''Subfolders'''
+{{#ask:[[Category:File Folder]][[!Files]][[!File Folders]][[!{{FULLPAGENAME}}/{{{1|}}}]][[Has Parent Page::{{FULLPAGENAME}}/{{{1|}}}]]
+|format=template
+|template=File Folder - Parent Result (Row2)
+|introtemplate=File Folder - Parent Result (Top)
+|outrotemplate=File Folder - Parent Result (Bot)
+|link=none
+|default=<div style="padding-left:24px;">no subfolders {{#info: Use the &quot;'''Create subfolder'''&quot; button (&#128194;) in the top-right to create a new subfolder for this folder. |note}} </div>
+}}{{#ifeq:{{{2|}}}|False|</div>|}}
+'''Files'''
+{{#ask:[[Category:Uploads]][[~*{{#var:PagePrefix}}*]]
+|?Has file size
+|?Creation date
+|?Modification date
+|?Page author
+|?MIME Type
+|?Page creator
+|?Has Description
+|?Number of revisions
+|?Has file ext
+|format=template
+|template=PagePrefix - Result Row
+|introtemplate=PagePrefix - Result Top
+|outrotemplate=PagePrefix - Result Bot
+|userparam={{#var:PagePrefix}}
+|link=none
+|limit=200
+|default=<div style="padding-left:24px;">no files {{#info: Use the &quot;'''Upload Tool'''&quot; to upload files to this folder. |note}} </div>
+}}
+<div style="padding-top:12px;">
+----
+'''<big>Upload Tool</big>'''
+:Upload files to this folder page using the drop-box below
+{{{!}}
+{{!}} style="font-size:5em;vertical-align:middle;color:#00ff00;" {{!}} &#128486;
+{{!}} style="padding-top:40px;" {{!}} {{#ifeq:{{{Disable Site Prefix|}}}|Yes
+  | {{#batchupload:Uploads|}}
+  | {{#batchupload:Uploads|+rename=!^({{#var:PagePrefix}}[./+]*)?!iu -->{{#var:PagePrefix}}}} 
+}}
+{{!}} style="font-size:5em;vertical-align:middle;color:#00ff00;" {{!}} &#128487;
+{{!}}}
+<div class=zBlurb>''Note: {{#ifeq:{{{Disable Site Prefix|}}}|Yes
+   | This is a Root File Folder and so any files uploaded here will not have the file prefix and you need to mindful of existing files that might have the same filename as what you are uploading.
+   | To avoid filename duplications, files uploaded here will be given the prefix "{{#var:PagePrefix}}"''
+   }}</div>
+</div>
+|}} <!-- Ends the ifexist statement -->
+</div> <!-- Ends the surrounding border --><!--
+
+ROOT PAGE HANDLING
+
+-->|{{#vardefine:PagePrefix|{{MediaWiki:ZSitePrefix}}{{PAGEID}}-}}
+<table style="margin: auto;"><tr><td><div style="border:2px solid #ddd; border-radius:8px 8px 8px 8px; padding:3px 12px 3px 12px;">
+{{#ifeq:{{{2|}}}|False|<div class="HideMe">|}}{{H1|&#128194; Root Folder}}
+<div style="float:right;">
+{{{!}}
+{{!}}{{#widget:RefreshPage}} {{#info:This link refreshes the page to ensure that everything is up to date.|note}}
+{{!}}-
+{{!}}{{#formlink:form=File Folder
+|link type=button
+|link text=<span style="font-size:3em;">&#x1F4C2;</span><br/>create subfolder
+|query string=File Folder[Requested New Subpage Basepage]={{FULLPAGENAME}}
+|returnto={{FULLPAGENAME}}
+|reload
+}}
+{{!}}}</div>
+'''Subfolders'''
+{{#ask:[[Category:File Folder]][[!Files]][[!File Folders]][[!{{FULLPAGENAME}}]][[Has Parent Page::{{FULLPAGENAME}}]]
+|format=template
+|template=File Folder - Parent Result (Row2)
+|introtemplate=File Folder - Parent Result (Top)
+|outrotemplate=File Folder - Parent Result (Bot)
+|link=none
+|default=<div style="padding-left:24px;">no subfolders {{#info: Use the &quot;'''Create subfolder'''&quot; button (&#128194;) in the top-right to create a new subfolder for this folder. |note}} </div>
+}}{{#ifeq:{{{2|}}}|False|</div>|}}
+'''Files'''
+{{#ask:[[Category:Uploads]][[~*{{#var:PagePrefix}}*]]
+|?Has file size
+|?Creation date
+|?Modification date
+|?Page author
+|?MIME Type
+|?Page creator
+|?Has Description
+|?Number of revisions
+|?Has file ext
+|format=template
+|template=PagePrefix - Result Row
+|introtemplate=PagePrefix - Result Top
+|outrotemplate=PagePrefix - Result Bot
+|userparam={{#var:PagePrefix}}
+|link=none
+|limit=200
+|default=<div style="padding-left:24px;">no files {{#info: Use the &quot;'''Upload Tool'''&quot; to upload files to this folder. |note}} </div>
+}}
+<div style="padding-top:12px;">
+----
+'''<big>Upload Tool</big>'''
+:Upload files to this folder page using the drop-box below
+{{{!}}
+{{!}} style="font-size:5em;vertical-align:middle;color:#00ff00;" {{!}} &#128486;
+{{!}} style="padding-top:40px;" {{!}} {{#ifeq:{{{Disable Site Prefix|}}}|Yes
+  | {{#batchupload:Uploads|}}
+  | {{#batchupload:Uploads|+rename=!^({{#var:PagePrefix}}[./+]*)?!iu -->{{#var:PagePrefix}}}} 
+}}
+{{!}} style="font-size:5em;vertical-align:middle;color:#00ff00;" {{!}} &#128487;
+{{!}}}
+<div class=zBlurb>''Note: {{#ifeq:{{{Disable Site Prefix|}}}|Yes
+   | This is a Root File Folder and so any files uploaded here will not have the file prefix and you need to mindful of existing files that might have the same filename as what you are uploading.
+   | To avoid filename duplications, files uploaded here will be given the prefix "{{#var:PagePrefix}}"''
+   }}</div>
+</div>
+</div></td></tr></table><!-- Ends the surrounding border -->
+}}<!--
+
+Begin Image Gallery
+
+-->
+{{#ifeq:0|{{#ask:[[Category:Uploads]][[Media type::BITMAP]][[~*{{#ifeq:{{#var:PagePrefix}}|{{Mediawiki:zSitePrefix}}-|GOBBLEDEEGOOK|{{#var:PagePrefix}}}}*]]|format=count}}
+|
+| 
+= Image Gallery =
+Display {{#ask:[[Category:Uploads]][[Media type::BITMAP]][[~*{{#var:PagePrefix}}*]]|format=count}} images found in this folder
+{{#ask:[[Category:Uploads]][[Media type::BITMAP]][[~*{{#var:PagePrefix}}*]]|format=gallery}}
+[[Category:Folders with Images]]
+}}<!--
+
+End Image Gallery
+
+-->
+{{#css:
+.srf-gallery { height: 150px; }
+.externalimage-holder { position: relative; }
+.externalimage-holder img { width: 100%; height: auto; }
+textarea#wfUploadDescription { display: none; visibility: hidden; }
+label[for="wfUploadDescription"] { display: none; visibility: hidden; } 
+}}
+[[Category:Embedded File Folder]]
+</includeonly><noinclude>
+{{zToolCheck|Tool - File Folder}}
+[[Category:Uses SimpleBatchUpload]]
+</noinclude>

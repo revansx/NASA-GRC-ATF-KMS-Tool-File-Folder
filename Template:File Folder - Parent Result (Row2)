@@ -1,0 +1,14 @@
+<noinclude>
+{| class=wikitable
+! ...
+</noinclude>
+|- 
+| style="text-align:right;color:#ccc;" | {{#ask:[[{{{1|error}}}]]|mainlabel=-|?File Folder Total=|default=0}}
+| style="width:24px;padding:0px 0px 0px 9px;" | <div class="externalimage-holder" style="width:24px;">{{SERVER}}/WikiBlender/Icon-file-folder.png</div>
+| style="padding:0px 0px 0px 0px;vertical-align:middle;" | [[{{{1|error}}}|{{#ask:[[{{{1|error}}}]]|mainlabel=-|?Has SubPage Name=}}]]
+|
+|<noinclude>
+|}</noinclude><noinclude>
+[[Category:KMS Core]]
+[[Category:Tool - File Folder]]
+</noinclude>

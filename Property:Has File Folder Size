@@ -1,0 +1,13 @@
+This is a property of type [[Has type::Quantity]].
+
+It displays units of "[[Display units::kB]]" where:
+*  the quantity "1 kB" corresponds to "[[Corresponds to::1024 bytes]]"
+*  the quantity "1 kB" corresponds to "[[Corresponds to::1024 Bytes]]"
+*  the quantity "1 kB" corresponds to "[[Corresponds to::1 KB]]"
+*  the quantity "1 kB" corresponds to "[[Corresponds to::0.0009765625 MB]]"
+*  the quantity "1 kB" corresponds to "[[Corresponds to::0.00000095367431640625 GB]]"
+*  the quantity "1 kB" corresponds to "[[Corresponds to::0.000000000931322574615478515625 TB]]"
+<noinclude>
+[[Category:KMS Core]]
+[[Category:Tool - File Folder]]
+</noinclude>

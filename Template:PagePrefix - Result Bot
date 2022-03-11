@@ -1,0 +1,12 @@
+<noinclude>
+{| class=wikitable
+! ...
+|-
+| ...
+</noinclude>
+|}{{#css:
+.zTblFileFolderx tr:nth-child(odd)  td { background-color:#e8e8e8; }
+.zTblFileFolderx tr:nth-child(even) td { background-color:#f8f8f8; }
+.zTblFileFolder tr:hover { background-color: #ffff99; }
+}}
+<noinclude>[[Category:KMS Core]][[Category:Tool - File Folder]]</noinclude>

@@ -1,0 +1,19 @@
+{{File Folder
+|File Folder Has Purpose=Example Purpose
+|File Folder Has POC=User:Rkevans
+|Is Protected=No
+|Has Notes=Example Note text
+|Has Full Description=Example Footer text
+|File Folder Has AFS Code=AFS Series 8430
+|File Folder Has NRRS Code=abc
+|File Folder Has NRRS Name=bcd
+|File Folder Has NRRS Description=cde
+|File Folder Has NRRS Retention=def
+|File Folder Has NRRS Public Notes=efg
+|File Folder Has NRRS Content Types=fgh
+|File Folder Has NRRS Duration=10
+}}
+<noinclude>
+[[Category:KMS Core]]
+[[Category:Tool - File Folder]]
+</noinclude>

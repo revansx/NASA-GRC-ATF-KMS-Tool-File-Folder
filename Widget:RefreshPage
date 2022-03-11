@@ -1,0 +1,3 @@
+<script type="text/javascript">
+document.write('<span onClick="Javascript:location.reload();" style="cursor: pointer;">&#128260; RELOAD</span>');
+</script><noinclude>{{zToolCheck|Tool - File Folder}}[[Category:Tool - Common]]</noinclude>
